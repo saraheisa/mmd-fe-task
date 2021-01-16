@@ -1,13 +1,28 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import queryString from 'query-string';
 import '../css/ProductsList.css';
 
-const ProductsList = () => {
+const ProductsList = ({ location }) => {
+    const options = queryString.parse(location.search);
     const state = useSelector(state => state);
+
+    const filterCategory = (product) => {
+        if (options.category === undefined || options.category === 'all') return true;
+        return product.category === options.category;
+    }
+
+    const filterName = (product) => {
+        if (options.searchTerm=== undefined  || options.searchTerm === '') return true;
+        return product.title.toLowerCase().includes(options.searchTerm.toLowerCase());
+    } 
 
     return (
         <ul className="products-list">
-            {state.products.map(product =>
+            {state.products
+            .filter(filterCategory)
+            .filter(filterName)
+            .map(product =>
                 <li className="product" key={product.id}>
                     <div className="product-img">
                         <img src={product.image} alt={product.name} />
