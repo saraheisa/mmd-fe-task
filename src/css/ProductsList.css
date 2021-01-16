@@ -54,4 +54,6 @@ img {
     background: transparent;
     border: 1px solid #2f94e5;
     color: #2f94e5;
+    text-transform: capitalize;
+    padding: 0.3em 2em;
 }
