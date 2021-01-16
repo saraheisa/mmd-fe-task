@@ -1,11 +1,19 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import queryString from 'query-string';
+import { setSearchOptions } from '../actions';
 import '../css/ProductsList.css';
 
 const ProductsList = ({ location }) => {
-    const options = queryString.parse(location.search);
+    
     const state = useSelector(state => state);
+    const dispatch = useDispatch();
+    
+    const options = queryString.parse(location.search);
+
+    useEffect(() => {
+        dispatch(setSearchOptions(options));
+    }, []);
 
     const filterCategory = (product) => {
         if (options.category === undefined || options.category === 'all') return true;

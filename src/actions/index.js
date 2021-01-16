@@ -1,4 +1,4 @@
-import { ADD_FETCHED_DATA, ADD_FETCHED_CATEGORY } from './types';
+import { ADD_FETCHED_DATA, ADD_FETCHED_CATEGORY, SEARCH_OPTIONS } from './types';
 import axios from 'axios';
 
 const apiUrl = 'https://fakestoreapi.com/products';
@@ -38,3 +38,10 @@ export const fetchCategory = () => {
             });
     };
 };
+
+export const setSearchOptions = options => {
+    return {
+        type: SEARCH_OPTIONS,
+        payload: options
+      }
+}
