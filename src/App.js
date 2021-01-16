@@ -1,11 +1,22 @@
 import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ProductsList from './components/ProductsList';
+import Search from './components/Search';
 
 function App() {
   return (
-    <div className="App">
-      <ProductsList/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Search />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            component={ProductsList}
+          />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

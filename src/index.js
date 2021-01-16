@@ -7,10 +7,11 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
-import { fetchData } from './actions';
+import { fetchData, fetchCategory } from './actions';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 store.dispatch(fetchData());
+store.dispatch(fetchCategory());
 
 ReactDOM.render(
   <Provider store={store}>
