@@ -1,0 +1,25 @@
+.search-form {
+    display: flex;
+    width: fit-content;
+    padding: 0.5em;
+    background: #000;
+}
+
+.search-form select {
+    padding: 0.5em;
+    border-radius: 2em 0 0 2em;
+    background: #fff;
+    border: none;
+    text-transform: capitalize;
+}
+
+.search-form input {
+    padding: 0.55em;
+    border: none;
+}
+
+.search-form input[type="submit"] {
+    background: #417bc7;
+    border-radius: 0 2em 2em 0;
+    text-transform: capitalize;
+}

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import uniqid from 'uniqid';
+import '../css/search.css';
 
 const Search = () => {
     const state = useSelector(state => state);
@@ -17,7 +18,7 @@ const Search = () => {
     }, [state.searchOptions]);
 
     return (
-        <form>
+        <form className="search-form">
             <div>
                 <select key="categories" name="category" value={category} onChange={e => setCategory(e.target.value)}>
                     <option value="all" key={uniqid()}>
@@ -34,7 +35,7 @@ const Search = () => {
                 <input type="text" name="searchTerm" value={searchTerm} onChange={e => setSearchTerm(e.target.value)}/>
             </div>
             <div>
-                <input type="submit" />
+                <input type="submit" value="search" />
             </div>
         </form>
     );
