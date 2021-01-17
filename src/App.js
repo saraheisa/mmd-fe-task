@@ -1,13 +1,13 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ProductsList from './components/ProductsList';
-import Search from './components/Search';
+import Header from './components/header';
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <div className="App">
-        <Search />
         <Switch>
           <Route
             exact

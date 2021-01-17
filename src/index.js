@@ -7,11 +7,22 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
-import { fetchData, fetchCategory } from './actions';
+import { fetchData, fetchCategory, fetchCart } from './actions';
+
+const getCart = () => {
+  try {
+    const s = localStorage.getItem("cart");
+    if (s === null) return [];
+    return JSON.parse(s);
+  } catch (e) {
+    return [];
+  }
+}
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 store.dispatch(fetchData());
 store.dispatch(fetchCategory());
+store.dispatch(fetchCart(getCart()));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,0 +1,17 @@
+.cart-container {
+    display: flex;
+    width: fit-content;
+    padding: 0.5em;
+    background: #000;
+}
+
+.cart-container span {
+    margin-left: -5px;
+    margin-top: -13px;
+    color: #417bc7;
+    font-weight: bolder;
+}
+
+.cart-container i {
+    color: #c9c9c9;
+}

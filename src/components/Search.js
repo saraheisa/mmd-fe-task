@@ -6,7 +6,6 @@ import '../css/search.css';
 const Search = () => {
     const state = useSelector(state => state);
 
-    console.log(state.searchOptions[0]);
     const [category, setCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
 
