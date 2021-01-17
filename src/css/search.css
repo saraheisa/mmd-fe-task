@@ -3,6 +3,7 @@
     width: fit-content;
     padding: 0.5em;
     background: #000;
+    flex-wrap: wrap;
 }
 
 .search-form select {
