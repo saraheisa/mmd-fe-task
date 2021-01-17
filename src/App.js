@@ -6,8 +6,8 @@ import Header from './components/header';
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <div className="App">
-        <Header/>
         <Switch>
           <Route
             exact
